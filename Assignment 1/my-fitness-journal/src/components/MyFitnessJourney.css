@@ -1,0 +1,75 @@
+/* Ensures that the main container stretches across the whole page and flexibly adjusts between image and form */
+.container {
+  /* display: flex; */
+  align-items: center;
+  justify-content: space-between; /* Use 'space-between' to maximize spacing */
+  padding: 5px;
+  width: 100%; /* Ensures the container takes full width of the viewport */
+}
+
+/* Styling for the image container to ensure it doesn't overlap and is circular */
+.image-container {
+  flex: 5;
+  min-width: 150% !important; /* Adjusted max-width to give more space */
+}
+
+.image-container img {
+  width: 100%; /* Full width of the container */
+  height: auto; /* Maintains image aspect ratio */
+  border-radius: 50%; /* Circular image */
+  object-fit: cover; /* Ensures the image covers the area without being distorted */
+}
+
+/* Form container styling for right alignment and responsiveness */
+.form-container {
+  /* flex: 1; Adjusted flex ratio to allow for more space between sections */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligns form fields to the start */
+}
+
+/* Form inputs styling */
+.form-container .form-group {
+  width: 100%; /* Full width to utilize the given space */
+}
+
+.form-container .form-control {
+  width: 100%; /* Input fields take full available width */
+  max-width: 500px; /* Max width to prevent overly long fields, ensures better design control */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px; /* Reduced padding for smaller screens */
+  }
+
+  .image-container,
+  .form-container {
+    width: 100%; /* Full width for smaller screens for better usability */
+  }
+
+  .form-container .form-control {
+    width: 100%; /* Ensures inputs are responsive and fit well within small screens */
+  }
+
+  .rowContainer {
+    justify-content: center; /* Centers items when in a single column layout */
+  }
+}
+
+.rowContainer {
+  /* display: flex; */
+  flex-wrap: wrap; /* Allows items to wrap as needed */
+  justify-content: space-between; /* Maximizes space between columns */
+  width: 100%; /* Ensures the row takes full width of its container */
+  margin-right: 50px; /* Removes any default margin to the right */
+  margin-left: 50px; /* Removes any default margin to the left */
+}
+
+/* Ensuring that columns within the row have consistent spacing */
+.rowContainer > [class*="col-"] {
+  margin-bottom: 20px; /* Provides bottom space between rows when wrapped */
+}
