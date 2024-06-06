@@ -8,7 +8,6 @@ import {
   Row,
   Col,
   Modal,
-  Card,
 } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./MyFitnessJourney.css"; // Assuming you store your additional CSS here
